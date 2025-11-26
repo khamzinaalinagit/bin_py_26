@@ -12,3 +12,9 @@ def is_binary_string(s):
 
 def find_binaries_in_text(text):
     return BINARY_IN_TEXT_PATTERN.findall(text)
+
+
+def find_binaries_in_file(path, encoding: str = "utf-8"):
+    with open(path, "r", encoding=encoding) as f:
+        content = f.read()
+    return find_binaries_in_text(content)
