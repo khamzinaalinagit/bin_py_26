@@ -5,3 +5,10 @@ from funcs import (
     find_binaries_in_url,
 )
 
+
+def mode_check_input():
+    s = input("Введите строку: ")
+    if is_binary_string(s):
+        print("Строка является двоичным числом.")
+    else:
+        print("Строка НЕ является двоичным числом.")
