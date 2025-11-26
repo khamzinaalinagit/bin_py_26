@@ -33,3 +33,20 @@ class TestBinaryUtils(unittest.TestCase):
         text = "no binaries here"
         result = find_binaries_in_text(text)
         self.assertEqual(result, [])
+
+    def test_find_binaries_in_file(self):
+
+        content = "a 101 b 222 c 1110"
+        with tempfile.NamedTemporaryFile("w+", delete=False, encoding="utf-8") as tmp:
+            tmp.write(content)
+            tmp_path = tmp.name
+
+        try:
+            result = find_binaries_in_file(tmp_path)
+            self.assertEqual(result, ["101", "1110"])
+        finally:
+            os.remove(tmp_path)
+
+
+if __name__ == "__main__":
+    unittest.main()
