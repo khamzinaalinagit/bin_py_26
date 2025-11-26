@@ -16,3 +16,10 @@ class TestBinaryUtils(unittest.TestCase):
         self.assertTrue(is_binary_string("1010"))
         self.assertTrue(is_binary_string("000111"))
         self.assertTrue(is_binary_string("   1011   "))
+
+    def test_is_binary_string_invalid(self):
+        self.assertFalse(is_binary_string(""))
+        self.assertFalse(is_binary_string("2"))
+        self.assertFalse(is_binary_string("10201"))
+        self.assertFalse(is_binary_string("abc"))
+        self.assertFalse(is_binary_string("10 10"))
