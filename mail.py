@@ -58,3 +58,33 @@ def mode_search_in_url():
             print(b)
     else:
         print("На странице двоичных чисел не найдено.")
+
+
+def main():
+    while True:
+        print("\n=== Поиск чисел в двоичной системе счисления ===")
+        print("1 — Проверить, является ли строка двоичным числом")
+        print("2 — Найти двоичные числа во введённом тексте")
+        print("3 — Найти двоичные числа в файле")
+        print("4 — Найти двоичные числа на веб-странице по URL")
+        print("0 — Выход")
+
+        choice = input("Ваш выбор: ").strip()
+
+        if choice == "1":
+            mode_check_input()
+        elif choice == "2":
+            mode_search_in_text()
+        elif choice == "3":
+            mode_search_in_file()
+        elif choice == "4":
+            mode_search_in_url()
+        elif choice == "0":
+            print("Выход.")
+            break
+        else:
+            print("Некорректный выбор. Попробуйте ещё раз.")
+
+
+if __name__ == "__main__":
+    main()
