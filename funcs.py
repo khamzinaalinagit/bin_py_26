@@ -8,3 +8,7 @@ BINARY_FULL_PATTERN = re.compile(r'^[01]+$')
 def is_binary_string(s):
     s = s.strip()
     return bool(BINARY_FULL_PATTERN.fullmatch(s))
+
+
+def find_binaries_in_text(text):
+    return BINARY_IN_TEXT_PATTERN.findall(text)
