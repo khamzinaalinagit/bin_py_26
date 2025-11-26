@@ -42,3 +42,19 @@ def mode_search_in_file():
             print(b)
     else:
         print("В файле двоичных чисел не найдено.")
+
+
+def mode_search_in_url():
+    url = input("Введите URL (например, https://example.com): ")
+    try:
+        binaries = find_binaries_in_url(url)
+    except Exception as e:
+        print(f"Ошибка при обращении к URL: {e}")
+        return
+
+    if binaries:
+        print(f"Найдено {len(binaries)} двоичных чисел на странице:")
+        for b in binaries:
+            print(b)
+    else:
+        print("На странице двоичных чисел не найдено.")
