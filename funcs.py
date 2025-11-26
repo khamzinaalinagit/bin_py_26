@@ -20,7 +20,7 @@ def find_binaries_in_file(path, encoding: str = "utf-8"):
     return find_binaries_in_text(content)
 
 
-def find_binaries_in_url(url, timeout):
+def find_binaries_in_url(url, timeout: int = 10):
     response = requests.get(url, timeout=timeout)
     response.raise_for_status()
     text = response.text
