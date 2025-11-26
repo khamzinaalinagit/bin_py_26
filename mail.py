@@ -23,3 +23,22 @@ def mode_search_in_text():
             print(b)
     else:
         print("Двоичных чисел не найдено.")
+
+
+def mode_search_in_file():
+    path = input("Введите путь к текстовому файлу: ")
+    try:
+        binaries = find_binaries_in_file(path)
+    except FileNotFoundError:
+        print("Файл не найден.")
+        return
+    except OSError as e:
+        print(f"Ошибка при чтении файла: {e}")
+        return
+
+    if binaries:
+        print(f"Найдено {len(binaries)} двоичных чисел:")
+        for b in binaries:
+            print(b)
+    else:
+        print("В файле двоичных чисел не найдено.")
