@@ -28,3 +28,8 @@ class TestBinaryUtils(unittest.TestCase):
         text = "values: 1010, 102, 000111, hello, 1110001."
         result = find_binaries_in_text(text)
         self.assertEqual(result, ["1010", "000111", "1110001"])
+
+    def test_find_binaries_in_text_empty(self):
+        text = "no binaries here"
+        result = find_binaries_in_text(text)
+        self.assertEqual(result, [])
