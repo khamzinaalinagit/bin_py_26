@@ -12,3 +12,14 @@ def mode_check_input():
         print("Строка является двоичным числом.")
     else:
         print("Строка НЕ является двоичным числом.")
+
+
+def mode_search_in_text():
+    text = input("Введите произвольный текст: ")
+    binaries = find_binaries_in_text(text)
+    if binaries:
+        print("Найдены двоичные числа:")
+        for b in binaries:
+            print(b)
+    else:
+        print("Двоичных чисел не найдено.")
